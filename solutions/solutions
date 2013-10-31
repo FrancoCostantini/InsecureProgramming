@@ -1,0 +1,11 @@
+stack1: the input should be "................................................................................DCBA". The number of "." is equal to the difference between the addresses of buf and cookie (shown in the first printf). In my case it was 80 (the reasoning is similar in the following exercises).
+
+stack2: the input should be "................................................................................\x05\x03\x02\x01". The command echo -e input | ./stack2 should be used.
+
+stack3: the input should be "................................................................................\x05\x00\x02\x01". The command echo -e input | ./stack3 should be used.
+
+stack4: there is no way to get the winning message, the input should contain \x0a (line feed) and gets() stops when reading "\n".
+
+stack5: same as before, there is no way to lose.
+
+
