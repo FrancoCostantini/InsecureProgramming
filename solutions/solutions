@@ -1,11 +1,25 @@
 stack1: the input should be "................................................................................DCBA". The number of "." is equal to the difference between the addresses of buf and cookie (shown in the first printf). In my case it was 80 (the reasoning is similar in the following exercises).
 
-stack2: the input should be "................................................................................\x05\x03\x02\x01". The command echo -e input | ./stack2 should be used.
+stack2: the input should be "................................................................................\x05\x03\x02\x01".
+The command echo -e input | ./stack2 should be used.
 
-stack3: the input should be "................................................................................\x05\x00\x02\x01". The command echo -e input | ./stack3 should be used.
+stack3: the input should be "................................................................................\x05\x00\x02\x01".
+The command echo -e input | ./stack3 should be used.
 
 stack4: there is no way to get the winning message, the input should contain \x0a (line feed) and gets() stops when reading "\n".
 
 stack5: same as before, there is no way to lose.
+
+abo1: in my case, buf was at 0x0bffff210 and erb was at 0xbffff318, so the input should be 272(¿268?) bytes long, with the last 4 indicating the adress of the next instruction we want to execute 
+............................................................................................................................................................................................................................................................................abcd
+This makes the adress of eip 0x64636261.
+
+abo2: exit makes the program terminates, in that case the return adress from stack gets ignored and it's useless to overwrite it.
+
+abo3: the objective is to overwrite fn so it points to system and then use that to execute some command.
+The input should consist of 272 bytes, where the last 8 indicate the address of system, and then the command to execute.
+"........................................................................................................................................................................................................................................................................sysaddress command". 
+The command echo -e input | ./abo3 should be used.
+
 
 
